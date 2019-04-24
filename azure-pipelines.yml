@@ -1,15 +1,36 @@
-# Azure Function
-
-
 pool:
   vmImage: 'Ubuntu 16.04'
-
-variables:
-  buildConfiguration: 'Release'
-
+  
 steps:
-- task: AzureFunctionApp@1
+
+- script: dotnet build 'CurrencyRates/CurrencyRates.sln' --configuration $(buildConfiguration)
+  displayName: 'Build solution'
+    
+- script: dotnet test 'CurrencyRates/CurrencyRates.Tests' --configuration $(buildConfiguration) --logger trx
+  displayName: 'Run unit tests'
+
+- task: PublishTestResults@2
   inputs:
-    azureSubscription: 'Pay-As-You-Go (f65cdc03-dc4a-4d97-9023-7dce649f899b)'
-    appType: 'functionApp'
-    appName: 'currate-fn-dev-ne'
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
+
+- script: dotnet publish 'CurrencyRates/CurrencyRates.csproj' --configuration $(buildConfiguration) --output '$(Build.ArtifactStagingDirectory)/app'
+  displayName: 'Package function app'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publishing app artifact'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/app'
+    artifactName: app
+
+- task: CopyFiles@2
+  displayName: 'Copy end to end tests'
+  inputs:
+    sourceFolder: 'CurrencyRates'
+    targetFolder: '$(Build.ArtifactStagingDirectory)/e2etests'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish end to end test artifact'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/e2etests'
+    artifactName: e2etests
