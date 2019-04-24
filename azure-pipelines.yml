@@ -3,7 +3,7 @@ pool:
   
 steps:
 
-- script: dotnet build 'CurrencyRates/CurrencyRates.sln' --configuration $(buildConfiguration)
+- script: dotnet build 'CurrencyRates.sln' --configuration $(buildConfiguration)
   displayName: 'Build solution'
     
 - script: dotnet test 'CurrencyRates/CurrencyRates.Tests' --configuration $(buildConfiguration) --logger trx
