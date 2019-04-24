@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "puml", "puml", "{AA1012AF-E
 		puml\Implementation.puml = puml\Implementation.puml
 	EndProjectSection
 EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ArmTemplate", "ArmTemplate\ArmTemplate.deployproj", "{3BB03BF6-BF08-47AA-A106-5705189324D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{BAFCC2AB-8D4A-4503-AAB5-AD148460FD85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAFCC2AB-8D4A-4503-AAB5-AD148460FD85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAFCC2AB-8D4A-4503-AAB5-AD148460FD85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB03BF6-BF08-47AA-A106-5705189324D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB03BF6-BF08-47AA-A106-5705189324D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB03BF6-BF08-47AA-A106-5705189324D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB03BF6-BF08-47AA-A106-5705189324D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
