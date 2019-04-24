@@ -1,7 +1,5 @@
 # CurrencyRates
 
-# Description
-
 Within many applications, there is a need to show or translate prices into different currencies. 
 By having this facility available within the code, it allows you to 
 * Store all prices in the same currency, 
