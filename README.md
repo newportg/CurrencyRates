@@ -1,6 +1,12 @@
 # CurrencyRates
 
-[![Build status](https://zoomalong.visualstudio.com/CurrencyRates/_apis/build/status/CurrencyRates-Azure%20Functions)](https://zoomalong.visualstudio.com/CurrencyRates/_build/latest?definitionId=1)
+
+| Proces | Outcome|
+|-|:-|
+| **Build**     | [![Build Status](https://dev.azure.com/zoomalong/CurrencyRates/_apis/build/status/CurrencyRates-CI?branchName=master)](https://dev.azure.com/zoomalong/CurrencyRates/_build/latest?definitionId=5&branchName=master)
+| **Dev**       | [![Dev status](https://vsrm.dev.azure.com/zoomalong/_apis/public/Release/badge/b444efd2-a37f-47de-92dd-27598a147b24/2/2)](https://vsrm.dev.azure.com/zoomalong/_apis/public/Release/badge/b444efd2-a37f-47de-92dd-27598a147b24/2/2)
+| **Prd**       | [![Prd Status](https://vsrm.dev.azure.com/zoomalong/_apis/public/Release/badge/b444efd2-a37f-47de-92dd-27598a147b24/2/4)](https://vsrm.dev.azure.com/zoomalong/_apis/public/Release/badge/b444efd2-a37f-47de-92dd-27598a147b24/2/4)
+| **Coverage**  | |
 
 Within many applications, there is a need to show or translate prices into different currencies. 
 By having this facility available within the code, it allows you to 
