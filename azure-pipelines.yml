@@ -6,8 +6,8 @@ steps:
 - script: dotnet build 'CurrencyRates.sln' --configuration $(buildConfiguration)
   displayName: 'Build solution'
     
-#- script: dotnet test 'CurrencyRates/CurrencyRates.Tests' --configuration $(buildConfiguration) --logger trx
-#  displayName: 'Run unit tests'
+- script: dotnet test 'CurrencyRates/CurrencyRatesTests' --configuration $(buildConfiguration) --logger trx
+  displayName: 'Run unit tests'
 
 - task: PublishTestResults@2
   inputs:
