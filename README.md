@@ -7,6 +7,7 @@
 | **Dev**       | [![Dev status](https://vsrm.dev.azure.com/zoomalong/_apis/public/Release/badge/b444efd2-a37f-47de-92dd-27598a147b24/2/2)](https://vsrm.dev.azure.com/zoomalong/_apis/public/Release/badge/b444efd2-a37f-47de-92dd-27598a147b24/2/2)
 | **Prd**       | [![Prd Status](https://vsrm.dev.azure.com/zoomalong/_apis/public/Release/badge/b444efd2-a37f-47de-92dd-27598a147b24/2/4)](https://vsrm.dev.azure.com/zoomalong/_apis/public/Release/badge/b444efd2-a37f-47de-92dd-27598a147b24/2/4)
 | **Coverage**  | |
+| **Project**   |[![Board Status](https://dev.azure.com/zoomalong/b444efd2-a37f-47de-92dd-27598a147b24/64f38721-702c-4b91-ab73-3a60ea6cd889/_apis/work/boardbadge/dea5cb40-fe34-46d6-bd26-5b69db76f356?columnOptions=1)](https://dev.azure.com/zoomalong/b444efd2-a37f-47de-92dd-27598a147b24/_boards/board/t/64f38721-702c-4b91-ab73-3a60ea6cd889/Microsoft.RequirementCategory)
 
 Within many applications, there is a need to show or translate prices into different currencies. 
 By having this facility available within the code, it allows you to 
