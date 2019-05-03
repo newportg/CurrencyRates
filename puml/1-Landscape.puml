@@ -1,0 +1,37 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH
+LAYOUT_WITH_LEGEND
+
+title System Landscape diagram for Big Bank plc
+
+Person(customer, "Hub Customer", "A User of the Hub System")
+
+Enterprise_Boundary(c0, "Kight Frank LLP") {
+    System(hub_system, "Hub System", "CRM & Property System, Which allows users to manage both Retail and Commercial transactions")
+
+    System_Ext(mail_system, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+    System_Ext(feed_centre, "External interface concentrator", "A system to manage all external interfaces")
+
+    System_Ext(sap, "SAP Payments", "Manages all payment transactions")
+
+    Person_Ext(customer_service, "Customer Service Staff", "Customer service staff within the company.")
+    Person_Ext(back_office, "Back Office Staff", "Administration and support staff within the company.")
+}
+
+Rel_Neighbor(customer, hub_system, "Uses")
+Rel_Back(customer, mail_system, "Sends e-mails to")
+
+Rel_R(customer, customer_service, "Asks questions to", "Telephone")
+
+Rel_D(hub_system, mail_system, "Sends e-mail using")
+Rel_R(hub_system, sap, "Uses")
+Rel_D(sap, mail_system, "Sends e-mail using")
+Rel_D(hub_system, feed_centre, "Uses")
+Rel_D(customer_service, hub_system, "Uses")
+Rel_D(back_office, hub_system, "Uses")
+
+Lay_U(mail_system, customer)
+@enduml

@@ -1,0 +1,29 @@
+@startuml CurrencyRates
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+
+LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH
+LAYOUT_WITH_LEGEND
+
+title Container diagram for Exchange Rate System
+
+Person( user, "User")
+Person( sched, "System Schedular")
+
+System_Boundary(c1, "Exchange Rates") {
+    Component( webapp, "API Application", "Provides Exchange rate information via an API")
+    ContainerDb(db, "Database", "Azure Table Storage", "Stores historical rate information and staic data")
+    
+    Rel_Back_Neighbor(db, webapp, "Reads from and writes to", "sync, ODBC")
+
+}
+
+System_Ext( fixer, "Exchange Rate Service")
+
+Rel( user, webapp, "uses", "https")
+Rel( sched, webapp, "uses", "https")
+Rel( webapp, fixer, "uses", "async,https")
+
+@enduml

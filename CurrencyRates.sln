@@ -13,12 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "puml", "puml", "{AA1012AF-EFB7-4E6D-A207-F79E42E1B2C5}"
 	ProjectSection(SolutionItems) = preProject
+		1-Context.puml = 1-Context.puml
+		2-Container.puml = 2-Container.puml
+		3-Component.puml = 3-Component.puml
 		puml\Implementation.puml = puml\Implementation.puml
 	EndProjectSection
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ArmTemplate", "ArmTemplate\ArmTemplate.deployproj", "{3BB03BF6-BF08-47AA-A106-5705189324D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRatesTests", "CurrencyRatesTests\CurrencyRatesTests.csproj", "{4074F129-A839-4D70-BCAB-042386553059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyRatesTests", "CurrencyRatesTests\CurrencyRatesTests.csproj", "{4074F129-A839-4D70-BCAB-042386553059}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

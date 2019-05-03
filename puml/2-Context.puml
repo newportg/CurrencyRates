@@ -1,0 +1,19 @@
+@startuml CurrencyRates
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+
+LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH
+LAYOUT_WITH_LEGEND
+
+title Container diagram for Exchange Rate System
+
+Person(user, "Hub User", "A user of the HUB that needs exchangr rate services")
+System(forex_system, "Foreign Exchange Rate System", "Allows users to request the current exchange rate for their local currency")
+System_Ext(forexApi, "External Foreign Exchange Rate Service", "An External service to supply exchange rate services")
+
+Rel(user, forex_system, "Uses")
+Rel(forex_system, forexApi, "Uses")
+
+@enduml

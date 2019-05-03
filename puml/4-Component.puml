@@ -1,0 +1,31 @@
+@startuml CurrencyRates
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+
+LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH
+LAYOUT_WITH_LEGEND
+
+title Component diagram for Exchange Rate System
+
+Person( user, "User")
+Person( sched, "System Schedular")
+
+Container_Boundary(c1, "API Resource Group") {
+    Component( webapp, "API Application", "Provides Exchange rate information via an API")
+    Component( auth, "Authentication/Authorisation", "Validates calling user")
+    Component( config, "KeyVault", "Secrets and config")
+    
+}
+
+ContainerDb(db, "Database", "Azure Table Storage", "Stores historical rate information and staic data")
+Rel(webapp, db, "Reads from and writes to", "sync, ODBC")
+
+System_Ext( fixer, "Exchange Rate Service")
+
+Rel( user, webapp, "uses", "https")
+Rel( sched, webapp, "uses", "https")
+Rel( webapp, fixer, "uses", "async,https")
+
+@enduml
