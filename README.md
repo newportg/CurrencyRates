@@ -41,6 +41,28 @@ By having this facility available within the code, it allows you to
 
 ![Container](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/newportg/CurrencyRates/master/puml/3-Container.puml)
 
+* The User can request a list of available currencies
+* The User can request a new rate
+  * Which is serviced from the datastore
+    * If the TimeStamp on the datastore record is greater than 1 day then a Refresh is scheduled.
+    * The user should be informed that a update is scheduled.
+* The Scheduled User requests a 
+  * refresh of the available currencies
+  * refresh of the the current rates
+* The DataStore will hold
+  * A List of available currencies 
+  * The current exchange rate against a base currency
+  * Exchange rates for each currency will be held for (Timespan)3 months
+    * Timespan is configurable
+    * Excahnge rates over the Timepan period will be deleted
+  * Base currency is configurable
+    * If you change the base currency then all rates will become void.
+  * A count of which 
+    * Currencies have been accessed
+    * When they where last accessed
+    * How many times they have been accessed
+
+
 # Component
 
 ![Component](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/newportg/CurrencyRates/master/puml/4-Component.puml)
